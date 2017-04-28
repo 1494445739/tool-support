@@ -1,6 +1,5 @@
 package com.tzg.tool.support.properties;
 
-import com.tzg.tool.support.datatype.StringUtil;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.util.DefaultPropertiesPersister;
