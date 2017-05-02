@@ -26,7 +26,7 @@ public final class PropUtil {
             Properties properties = new Properties();
             envProp = StringUtils.isEmpty( envProp ) ? "dev" : envProp;
 
-            Resource          resource = new DefaultResourceLoader().getResource( "/properties/env.properties".replace( "$env", envProp ) );
+            Resource          resource = new DefaultResourceLoader().getResource( "/properties/env_$env.properties".replace( "$env", envProp ) );
             InputStreamReader reader   = new InputStreamReader( resource.getInputStream(), "UTF-8" );
 
             DefaultPropertiesPersister persist = new DefaultPropertiesPersister();
