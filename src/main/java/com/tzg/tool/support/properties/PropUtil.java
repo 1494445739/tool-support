@@ -34,6 +34,8 @@ public final class PropUtil {
 
             property = properties.getProperty( key );
 
+            reader.close();
+
         }
 
         return property;
