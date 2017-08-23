@@ -19,15 +19,13 @@ public final class PropUtil {
     public static String get( String key ) throws IOException {
 
         String property = System.getProperty( key );
-        String envProp  = System.getProperty( "env" );
 
         if ( StringUtils.isEmpty( property ) ) {
 
-            Properties properties = new Properties();
-            envProp = StringUtils.isEmpty( envProp ) ? "dev" : envProp;
-
-            Resource          resource = new DefaultResourceLoader().getResource( "/properties/env_$env.properties".replace( "$env", envProp ) );
-            InputStreamReader reader   = new InputStreamReader( resource.getInputStream(), "UTF-8" );
+            Properties        properties = new Properties();
+            String            location   = "file:/opt/resource/system.properties";
+            Resource          resource   = new DefaultResourceLoader().getResource( location );
+            InputStreamReader reader     = new InputStreamReader( resource.getInputStream(), "UTF-8" );
 
             DefaultPropertiesPersister persist = new DefaultPropertiesPersister();
             persist.load( properties, reader );
