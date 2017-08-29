@@ -9,7 +9,7 @@ import java.io.InputStream;
 
 public final class ParamUtil {
 
-    public JSONObject getJSONFromRequest( HttpServletRequest request ) throws Exception {
+    public static JSONObject getJSONFromRequest( HttpServletRequest request ) throws Exception {
         InputStream is          = request.getInputStream();
         String      paramString = IOUtil.convertStream2String( is );
         return JSON.parseObject( paramString );
