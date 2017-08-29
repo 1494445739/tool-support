@@ -60,6 +60,13 @@ public final class Codec {
     }
 
     /**
+     * Base64解码.
+     */
+    public static byte[] decodeBase64( String input ) {
+        return Base64.decodeBase64( input );
+    }
+
+    /**
      * Base62 编码
      */
     public static String encodeBase62( byte[] input ) {
