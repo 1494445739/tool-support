@@ -5,6 +5,8 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.function.Predicate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public final class Assert {
 
@@ -134,6 +136,18 @@ public final class Assert {
         }
 
         isTrue( expression, message );
+
+    }
+
+    public static void isNumber( String str, String message ) {
+
+        if ( blankPredicate.test( str ) ) {
+            throw new IllegalArgumentException( message );
+        }
+
+        Pattern pattern = Pattern.compile( "^(([1-9]{1}\\d*)|([0]{1}))(\\.(\\d){0,2})?$" );
+        Matcher match   = pattern.matcher( str );
+        isTrue( match.matches(), message );
 
     }
 
