@@ -37,7 +37,7 @@ import java.util.function.Predicate;
  */
 public class HttpClientUtil {
 
-    public String doPost( String url, Map< String, String > map, String charset ) {
+    public static String doPost( String url, Map< String, String > map, String charset ) {
 
         String result = null;
 
